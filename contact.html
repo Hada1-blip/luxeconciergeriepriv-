@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Estimation gratuite sous 24h. Nos experts analysent votre bien et vous proposent la stratégie adaptée."/>
+<meta name="keywords" content="conciergerie privée, gestion locative, location saisonnière, service premium"/>
+<title>Contact & Devis — LuxeConciergerie</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="CUR"></div><div id="CURR"></div>
+<button class="fcta" id="FCTA" onclick="openPop()"><div class="fcta-dot"></div>Devis gratuit</button>
+
+<!-- POPUP -->
+<div class="pop-ov" id="POP_OV" onclick="closePop()"></div>
+<div class="pop-pnl" id="POP">
+  <button class="pop-x" onclick="closePop()">✕</button>
+  <div class="pop-t">Estimation gratuite</div>
+  <div class="pop-s">Réponse personnalisée sous 24h · Sans engagement</div>
+  <form onsubmit="subPop(event)">
+    <div class="pop-row">
+      <div class="pop-fg"><label class="pop-fl">Prénom</label><input class="pop-fi" type="text" placeholder="Jean" required/></div>
+      <div class="pop-fg"><label class="pop-fl">Nom</label><input class="pop-fi" type="text" placeholder="Dupont" required/></div>
+    </div>
+    <div class="pop-fg"><label class="pop-fl">Téléphone *</label><input class="pop-fi" type="tel" placeholder="06 XX XX XX XX" required/></div>
+    <div class="pop-fg"><label class="pop-fl">Email</label><input class="pop-fi" type="email" placeholder="jean@email.com"/></div>
+    <div class="pop-fg"><label class="pop-fl">Type de bien</label><select class="pop-sel"><option>Appartement</option><option>Maison</option><option>Villa</option><option>Chalet</option><option>Loft</option></select></div>
+    <div class="pop-fg"><label class="pop-fl">Ville</label><input class="pop-fi" type="text" placeholder="Paris, Lyon, Nice..."/></div>
+    <div class="pop-fg"><label class="pop-fl">Message</label><textarea class="pop-ta" placeholder="Surface, objectifs, situation actuelle..."></textarea></div>
+    <button type="submit" class="pop-sub" id="POPBTN">✦ Recevoir mon estimation gratuite</button>
+  </form>
+</div>
+
+<!-- MOBILE -->
+<div id="MOB">
+  <button class="mob-x" onclick="closeMob()">✕</button>
+  <a href="index.html">Accueil</a>
+  <a href="services.html">Services</a>
+  <a href="apropos.html">À Propos</a>
+  <a href="realisations.html">Réalisations</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<nav id="NAV" class="top">
+  <a class="nlogo" href="index.html"><span class="nlogo-name">LuxeConciergerie</span><span class="nlogo-sub">Conciergerie Privée</span></a>
+  <ul class="nlinks">
+    <li><a href="index.html" >Accueil</a></li>
+    <li><a href="services.html" >Services</a></li>
+    <li><a href="apropos.html" >À Propos</a></li>
+    <li><a href="realisations.html" >Réalisations</a></li>
+    <li><a href="contact.html" class='act'>Contact</a></li>
+  </ul>
+  <a href="contact.html" class="ncta">Demander un devis</a>
+  <button class="nburger" onclick="openMob()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="phero"><div class="phero-in rv-l"><div class="phero-tag">✦ Devis Gratuit</div><h1>Parlons de votre projet<br/><em>dès aujourd'hui</em></h1><p class="phero-sub">Estimation personnalisée sous 24h. Nos experts analysent votre bien et vous proposent la stratégie adaptée. Sans engagement.</p></div></div>
+<section class="sec rv" style="background:var(--w)">
+  <div class="cgrid">
+    <div><div class="sec-lbl">Contact</div><h2 class="sh" style="font-size:clamp(20px,3vw,36px)">Réponse <em>sous 24h</em><br/>garantie</h2>
+      <div class="cinfo"><div class="ci-it"><div class="ci-ic">📞</div><div><div class="ci-lbl">Téléphone</div><div class="ci-val">06 XX XX XX XX</div></div></div><div class="ci-it"><div class="ci-ic">✉️</div><div><div class="ci-lbl">Email</div><div class="ci-val">contact@luxeconciergerie.fr</div></div></div><div class="ci-it"><div class="ci-ic">📍</div><div><div class="ci-lbl">Zones</div><div class="ci-val">Paris · Lyon · Bordeaux · Nice · Biarritz · Chamonix</div></div></div><div class="ci-it"><div class="ci-ic">🕐</div><div><div class="ci-lbl">Disponibilité</div><div class="ci-val">Lun–Dim, 8h–22h · Urgences 24h/24</div></div></div></div>
+      <div class="gars"><div class="gar">Estimation gratuite et personnalisée</div><div class="gar">Sans engagement, sans frais cachés</div><div class="gar">Réponse sous 24h garantie</div><div class="gar">Gestionnaire dédié dès le 1er contact</div><div class="gar">Opérationnel en 72h après signature</div></div>
+    </div>
+    <div class="fbox rv-r">
+      <div class="form-t">Demander un devis gratuit</div>
+      <div class="form-s">Décrivez votre bien, nous vous rappelons avec une estimation sous 24h.</div>
+      <form onsubmit="subMain(event)">
+        <div class="fg row"><div class="fg"><label class="fl">Prénom *</label><input class="fi" type="text" placeholder="Jean" required/></div><div class="fg"><label class="fl">Nom *</label><input class="fi" type="text" placeholder="Dupont" required/></div></div>
+        <div class="fg row"><div class="fg"><label class="fl">Téléphone *</label><input class="fi" type="tel" placeholder="06 XX XX XX XX" required/></div><div class="fg"><label class="fl">Email *</label><input class="fi" type="email" placeholder="jean@email.com" required/></div></div>
+        <div class="fg"><label class="fl">Type de bien</label><select class="fsel"><option>Appartement</option><option>Maison</option><option>Villa</option><option>Chalet</option><option>Loft</option></select></div>
+        <div class="fg"><label class="fl">Ville</label><input class="fi" type="text" placeholder="Paris, Lyon, Nice..."/></div>
+        <div class="fg"><label class="fl">Situation actuelle</label><select class="fsel"><option>Pas encore mis en location</option><option>Je gère moi-même</option><option>Avec une autre conciergerie</option><option>Location longue durée</option></select></div>
+        <div class="fg"><label class="fl">Message</label><textarea class="fta" placeholder="Surface, objectifs, revenus actuels..."></textarea></div>
+        <button type="submit" class="form-sub" id="MBTN">✦ Recevoir mon estimation gratuite — Sans engagement</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a class="nlogo" href="index.html"><span class="nlogo-name">LuxeConciergerie</span><span class="nlogo-sub">Conciergerie Privée</span></a>
+      <p class="ft-tagline">L'excellence au service de votre patrimoine immobilier depuis 2017.</p>
+    </div>
+    <div class="ft-col"><h4>Navigation</h4><a href="index.html">Accueil</a><a href="services.html">Services</a><a href="apropos.html">À Propos</a><a href="realisations.html">Réalisations</a><a href="contact.html">Contact</a></div>
+    <div class="ft-col"><h4>Services</h4><a href="services.html">Gestion locative</a><a href="services.html">Optimisation revenus</a><a href="services.html">Conciergerie premium</a><a href="services.html">Maintenance</a><a href="services.html">Analytics</a></div>
+    <div class="ft-col"><h4>Contact</h4><a href="tel:+33600000000">06 XX XX XX XX</a><a href="mailto:contact@luxeconciergerie.fr">contact@luxeconciergerie.fr</a><a>Paris · Lyon · Nice · Bordeaux</a></div>
+  </div>
+  <div class="ft-bot"><span class="ft-copy">© 2025 LuxeConciergerie — Tous droits réservés</span><div class="ft-legal"><a href="#">Mentions légales</a><a href="#">CGV</a><a href="#">Confidentialité</a></div></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

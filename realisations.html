@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="340 biens gérés, 340 histoires de réussite. Découvrez nos projets avec leurs résultats concrets."/>
+<meta name="keywords" content="conciergerie privée, gestion locative, location saisonnière, service premium"/>
+<title>Nos Réalisations — LuxeConciergerie</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="CUR"></div><div id="CURR"></div>
+<button class="fcta" id="FCTA" onclick="openPop()"><div class="fcta-dot"></div>Devis gratuit</button>
+
+<!-- POPUP -->
+<div class="pop-ov" id="POP_OV" onclick="closePop()"></div>
+<div class="pop-pnl" id="POP">
+  <button class="pop-x" onclick="closePop()">✕</button>
+  <div class="pop-t">Estimation gratuite</div>
+  <div class="pop-s">Réponse personnalisée sous 24h · Sans engagement</div>
+  <form onsubmit="subPop(event)">
+    <div class="pop-row">
+      <div class="pop-fg"><label class="pop-fl">Prénom</label><input class="pop-fi" type="text" placeholder="Jean" required/></div>
+      <div class="pop-fg"><label class="pop-fl">Nom</label><input class="pop-fi" type="text" placeholder="Dupont" required/></div>
+    </div>
+    <div class="pop-fg"><label class="pop-fl">Téléphone *</label><input class="pop-fi" type="tel" placeholder="06 XX XX XX XX" required/></div>
+    <div class="pop-fg"><label class="pop-fl">Email</label><input class="pop-fi" type="email" placeholder="jean@email.com"/></div>
+    <div class="pop-fg"><label class="pop-fl">Type de bien</label><select class="pop-sel"><option>Appartement</option><option>Maison</option><option>Villa</option><option>Chalet</option><option>Loft</option></select></div>
+    <div class="pop-fg"><label class="pop-fl">Ville</label><input class="pop-fi" type="text" placeholder="Paris, Lyon, Nice..."/></div>
+    <div class="pop-fg"><label class="pop-fl">Message</label><textarea class="pop-ta" placeholder="Surface, objectifs, situation actuelle..."></textarea></div>
+    <button type="submit" class="pop-sub" id="POPBTN">✦ Recevoir mon estimation gratuite</button>
+  </form>
+</div>
+
+<!-- MOBILE -->
+<div id="MOB">
+  <button class="mob-x" onclick="closeMob()">✕</button>
+  <a href="index.html">Accueil</a>
+  <a href="services.html">Services</a>
+  <a href="apropos.html">À Propos</a>
+  <a href="realisations.html">Réalisations</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<nav id="NAV" class="top">
+  <a class="nlogo" href="index.html"><span class="nlogo-name">LuxeConciergerie</span><span class="nlogo-sub">Conciergerie Privée</span></a>
+  <ul class="nlinks">
+    <li><a href="index.html" >Accueil</a></li>
+    <li><a href="services.html" >Services</a></li>
+    <li><a href="apropos.html" >À Propos</a></li>
+    <li><a href="realisations.html" class='act'>Réalisations</a></li>
+    <li><a href="contact.html" >Contact</a></li>
+  </ul>
+  <a href="contact.html" class="ncta">Demander un devis</a>
+  <button class="nburger" onclick="openMob()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="phero"><div class="phero-in rv-l"><div class="phero-tag">✦ Portfolio</div><h1>Nos <em>Réalisations</em></h1><p class="phero-sub">340 biens gérés, 340 histoires de réussite. Résultats concrets pour nos propriétaires.</p>
+  <div class="real-filters"><button class="rft on">Tous</button><button class="rft">Appartements</button><button class="rft">Maisons & Villas</button><button class="rft">Chalets</button><button class="rft">Lofts</button></div>
+</div></div>
+<section class="sec rv" style="background:var(--w)">
+  <div class="real-grid">
+    <div class="rcard"><div class="rcard-img"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80" alt="Appartement Paris" loading="lazy"/><div class="rcard-tag">Appartement</div></div><div class="rcard-body"><div class="rcard-loc">📍 Paris 8ème</div><div class="rcard-name">Suite Haussmannienne 80m²</div><div class="rcard-stats"><div class="rs"><strong>3 200€</strong>revenus/mois</div><div class="rs"><strong>98%</strong>occupation</div><div class="rs"><strong>+71%</strong>vs avant</div></div></div></div>
+    <div class="rcard"><div class="rcard-img"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" alt="Villa" loading="lazy"/><div class="rcard-tag">Villa</div></div><div class="rcard-body"><div class="rcard-loc">📍 Côte d'Azur</div><div class="rcard-name">Villa avec piscine privée</div><div class="rcard-stats"><div class="rs"><strong>8 500€</strong>revenus/mois</div><div class="rs"><strong>94%</strong>occupation</div><div class="rs"><strong>+55%</strong>vs avant</div></div></div></div>
+    <div class="rcard"><div class="rcard-img"><img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=80" alt="Loft" loading="lazy"/><div class="rcard-tag">Loft</div></div><div class="rcard-body"><div class="rcard-loc">📍 Lyon Confluence</div><div class="rcard-name">Loft Design Industriel 65m²</div><div class="rcard-stats"><div class="rs"><strong>2 100€</strong>revenus/mois</div><div class="rs"><strong>96%</strong>occupation</div><div class="rs"><strong>+43%</strong>vs avant</div></div></div></div>
+    <div class="rcard"><div class="rcard-img"><img src="https://images.unsplash.com/photo-1549294413-26f195200c16?w=800&q=80" alt="Maison" loading="lazy"/><div class="rcard-tag">Maison</div></div><div class="rcard-body"><div class="rcard-loc">📍 Biarritz</div><div class="rcard-name">Maison front de mer 4 ch.</div><div class="rcard-stats"><div class="rs"><strong>6 200€</strong>revenus/mois</div><div class="rs"><strong>91%</strong>occupation</div><div class="rs"><strong>+62%</strong>vs avant</div></div></div></div>
+    <div class="rcard"><div class="rcard-img"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80" alt="Appartement" loading="lazy"/><div class="rcard-tag">Appartement</div></div><div class="rcard-body"><div class="rcard-loc">📍 Bordeaux Chartrons</div><div class="rcard-name">T2 Chartrons Rénové 45m²</div><div class="rcard-stats"><div class="rs"><strong>1 800€</strong>revenus/mois</div><div class="rs"><strong>97%</strong>occupation</div><div class="rs"><strong>+48%</strong>vs avant</div></div></div></div>
+    <div class="rcard"><div class="rcard-img"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80" alt="Chalet" loading="lazy"/><div class="rcard-tag">Chalet</div></div><div class="rcard-body"><div class="rcard-loc">📍 Chamonix</div><div class="rcard-name">Chalet Ski In / Ski Out</div><div class="rcard-stats"><div class="rs"><strong>12 000€</strong>revenus/mois</div><div class="rs"><strong>89%</strong>occupation</div><div class="rs"><strong>+38%</strong>vs avant</div></div></div></div>
+  </div>
+</section>
+<div class="nums-wrap"><div class="nums-grid rv"><div class="num-item"><span class="num-val" data-t="340" data-s="+">0</span><span class="num-lbl">Biens gérés</span></div><div class="num-item"><span class="num-val" data-t="97" data-s="%">0</span><span class="num-lbl">Taux d'occupation</span></div><div class="num-item"><span class="num-val" data-t="54" data-s="%">0</span><span class="num-lbl">Hausse revenus moy.</span></div><div class="num-item"><span class="num-val" data-t="4800" data-s="+">0</span><span class="num-lbl">Voyageurs accueillis</span></div></div></div>
+<div class="cta-band rv"><h2>Votre bien peut être<br/>notre <em>prochaine réussite</em></h2><p>Rejoignez les 340 propriétaires qui nous font confiance.</p><div class="cta-acts"><button class="btn-gd" onclick="openPop()">Demander une estimation gratuite</button></div></div>
+
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a class="nlogo" href="index.html"><span class="nlogo-name">LuxeConciergerie</span><span class="nlogo-sub">Conciergerie Privée</span></a>
+      <p class="ft-tagline">L'excellence au service de votre patrimoine immobilier depuis 2017.</p>
+    </div>
+    <div class="ft-col"><h4>Navigation</h4><a href="index.html">Accueil</a><a href="services.html">Services</a><a href="apropos.html">À Propos</a><a href="realisations.html">Réalisations</a><a href="contact.html">Contact</a></div>
+    <div class="ft-col"><h4>Services</h4><a href="services.html">Gestion locative</a><a href="services.html">Optimisation revenus</a><a href="services.html">Conciergerie premium</a><a href="services.html">Maintenance</a><a href="services.html">Analytics</a></div>
+    <div class="ft-col"><h4>Contact</h4><a href="tel:+33600000000">06 XX XX XX XX</a><a href="mailto:contact@luxeconciergerie.fr">contact@luxeconciergerie.fr</a><a>Paris · Lyon · Nice · Bordeaux</a></div>
+  </div>
+  <div class="ft-bot"><span class="ft-copy">© 2025 LuxeConciergerie — Tous droits réservés</span><div class="ft-legal"><a href="#">Mentions légales</a><a href="#">CGV</a><a href="#">Confidentialité</a></div></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

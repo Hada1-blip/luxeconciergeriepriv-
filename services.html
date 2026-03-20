@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Gestion locative intégrale, optimisation revenus, conciergerie premium. Découvrez toutes nos prestations."/>
+<meta name="keywords" content="conciergerie privée, gestion locative, location saisonnière, service premium"/>
+<title>Services — LuxeConciergerie</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="CUR"></div><div id="CURR"></div>
+<button class="fcta" id="FCTA" onclick="openPop()"><div class="fcta-dot"></div>Devis gratuit</button>
+
+<!-- POPUP -->
+<div class="pop-ov" id="POP_OV" onclick="closePop()"></div>
+<div class="pop-pnl" id="POP">
+  <button class="pop-x" onclick="closePop()">✕</button>
+  <div class="pop-t">Estimation gratuite</div>
+  <div class="pop-s">Réponse personnalisée sous 24h · Sans engagement</div>
+  <form onsubmit="subPop(event)">
+    <div class="pop-row">
+      <div class="pop-fg"><label class="pop-fl">Prénom</label><input class="pop-fi" type="text" placeholder="Jean" required/></div>
+      <div class="pop-fg"><label class="pop-fl">Nom</label><input class="pop-fi" type="text" placeholder="Dupont" required/></div>
+    </div>
+    <div class="pop-fg"><label class="pop-fl">Téléphone *</label><input class="pop-fi" type="tel" placeholder="06 XX XX XX XX" required/></div>
+    <div class="pop-fg"><label class="pop-fl">Email</label><input class="pop-fi" type="email" placeholder="jean@email.com"/></div>
+    <div class="pop-fg"><label class="pop-fl">Type de bien</label><select class="pop-sel"><option>Appartement</option><option>Maison</option><option>Villa</option><option>Chalet</option><option>Loft</option></select></div>
+    <div class="pop-fg"><label class="pop-fl">Ville</label><input class="pop-fi" type="text" placeholder="Paris, Lyon, Nice..."/></div>
+    <div class="pop-fg"><label class="pop-fl">Message</label><textarea class="pop-ta" placeholder="Surface, objectifs, situation actuelle..."></textarea></div>
+    <button type="submit" class="pop-sub" id="POPBTN">✦ Recevoir mon estimation gratuite</button>
+  </form>
+</div>
+
+<!-- MOBILE -->
+<div id="MOB">
+  <button class="mob-x" onclick="closeMob()">✕</button>
+  <a href="index.html">Accueil</a>
+  <a href="services.html">Services</a>
+  <a href="apropos.html">À Propos</a>
+  <a href="realisations.html">Réalisations</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<nav id="NAV" class="top">
+  <a class="nlogo" href="index.html"><span class="nlogo-name">LuxeConciergerie</span><span class="nlogo-sub">Conciergerie Privée</span></a>
+  <ul class="nlinks">
+    <li><a href="index.html" >Accueil</a></li>
+    <li><a href="services.html" class='act'>Services</a></li>
+    <li><a href="apropos.html" >À Propos</a></li>
+    <li><a href="realisations.html" >Réalisations</a></li>
+    <li><a href="contact.html" >Contact</a></li>
+  </ul>
+  <a href="contact.html" class="ncta">Demander un devis</a>
+  <button class="nburger" onclick="openMob()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="phero"><div class="phero-in rv-l"><div class="phero-tag">✦ Nos Prestations</div><h1>Des services <em>sur mesure</em><br/>pour chaque bien</h1><p class="phero-sub">De la gestion opérationnelle à la stratégie de valorisation, nous couvrons l'intégralité de vos besoins locatifs.</p></div></div>
+<section class="sec rv" style="background:var(--w)">
+  <div class="sec-lbl">Services Complets</div><h2 class="sh">Tout ce dont vous avez besoin,<br/><em>en un seul partenaire</em></h2>
+  <div class="sfull-grid">
+    <div class="sfull"><span class="sfull-ic">🏠</span><div class="sfull-name">Gestion Locative Intégrale</div><div class="sfull-desc">Prise en charge à 360° de votre bien. Notre équipe gère tout, de la publication à l'encaissement mensuel.</div><div class="sfull-list"><div class="sfull-li">Publication sur 15 plateformes internationales</div><div class="sfull-li">Gestion communications voyageurs en 4 langues</div><div class="sfull-li">Check-in/out flexible et accueil personnalisé</div><div class="sfull-li">Ménage professionnel certifié hôtelier</div><div class="sfull-li">Linge de maison premium et réassort automatique</div></div></div>
+    <div class="sfull"><span class="sfull-ic">🌟</span><div class="sfull-name">Optimisation des Revenus</div><div class="sfull-desc">Notre équipe analyse la demande locale, la saisonnalité et les événements pour recommander le prix optimal chaque nuit.</div><div class="sfull-list"><div class="sfull-li">Analyse des événements locaux : concerts, salons, festivals</div><div class="sfull-li">Benchmarking vs concurrents de votre secteur</div><div class="sfull-li">Tarifs min/max personnalisés selon vos objectifs</div><div class="sfull-li">Optimisation dédiée des créneaux creux</div><div class="sfull-li">Rapport de performance hebdomadaire automatique</div></div></div>
+    <div class="sfull"><span class="sfull-ic">✨</span><div class="sfull-name">Conciergerie & Expérience Voyageur</div><div class="sfull-desc">Offrez une expérience 5 étoiles qui génère des avis exceptionnels.</div><div class="sfull-list"><div class="sfull-li">Accueil personnalisé en FR, EN, ES, ZH</div><div class="sfull-li">Guide exclusif du quartier et recommandations</div><div class="sfull-li">Transferts aéroport avec chauffeurs partenaires</div><div class="sfull-li">Services à la carte : courses, champagne, fleurs</div><div class="sfull-li">Support voyageurs 24h/24, 7j/7</div></div></div>
+    <div class="sfull"><span class="sfull-ic">🔧</span><div class="sfull-name">Maintenance & Gestion Technique</div><div class="sfull-desc">80 artisans certifiés disponibles 7j/7. Nous anticipons et résolvons sans vous déranger.</div><div class="sfull-list"><div class="sfull-li">Intervention d'urgence garantie en moins de 2h</div><div class="sfull-li">Inspections préventives trimestrielles</div><div class="sfull-li">Suivi photographique avant/après chaque intervention</div><div class="sfull-li">Gestion sinistres et coordination assurances</div><div class="sfull-li">Devis instantané pour toute réparation</div></div></div>
+  </div>
+</section>
+<section class="sec rv" style="background:var(--w2);text-align:center">
+  <div class="sec-lbl">Nos Formules</div><h2 class="sh">Tarifs <em>transparents</em>, zéro surprise</h2>
+  <div class="trf-grid">
+    <div class="trf"><div class="trf-name">Essentiel</div><div class="trf-price">15<sup>%</sup></div><div class="trf-per">des revenus générés</div><div class="trf-feats"><div class="trf-f"><span class="ck">✓</span> Annonces multi-plateformes</div><div class="trf-f"><span class="ck">✓</span> Check-in/out boîte à clés</div><div class="trf-f"><span class="ck">✓</span> Ménage standard inclus</div><div class="trf-f"><span class="ck">✓</span> Support email propriétaire</div></div><button class="trf-btn" onclick="openPop()">Choisir cette formule</button></div>
+    <div class="trf feat"><div class="trf-badge">⭐ Plus populaire</div><div class="trf-name">Premium</div><div class="trf-price">18<sup>%</sup></div><div class="trf-per">des revenus générés</div><div class="trf-feats"><div class="trf-f"><span class="ck">✓</span> Tout l'Essentiel</div><div class="trf-f"><span class="ck">✓</span> Optimisation revenus complète</div><div class="trf-f"><span class="ck">✓</span> Accueil en personne 4 langues</div><div class="trf-f"><span class="ck">✓</span> Support téléphone 24h/24</div><div class="trf-f"><span class="ck">✓</span> Dashboard temps réel complet</div></div><button class="trf-btn" onclick="openPop()">Choisir cette formule</button></div>
+    <div class="trf"><div class="trf-name">Prestige</div><div class="trf-price">22<sup>%</sup></div><div class="trf-per">des revenus générés</div><div class="trf-feats"><div class="trf-f"><span class="ck">✓</span> Tout le Premium</div><div class="trf-f"><span class="ck">✓</span> Conciergerie premium complète</div><div class="trf-f"><span class="ck">✓</span> Shooting photo annuel offert</div><div class="trf-f"><span class="ck">✓</span> Gestionnaire dédié personnel</div><div class="trf-f"><span class="ck">✓</span> Garantie revenus minimum</div></div><button class="trf-btn" onclick="openPop()">Choisir cette formule</button></div>
+  </div>
+</section>
+<div class="cta-band rv"><h2>Pas sûr de quelle formule <em>vous convient ?</em></h2><p>Nos experts vous guident gratuitement.</p><div class="cta-acts"><button class="btn-wh" onclick="openPop()">Parler à un expert — Gratuit</button></div></div>
+
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a class="nlogo" href="index.html"><span class="nlogo-name">LuxeConciergerie</span><span class="nlogo-sub">Conciergerie Privée</span></a>
+      <p class="ft-tagline">L'excellence au service de votre patrimoine immobilier depuis 2017.</p>
+    </div>
+    <div class="ft-col"><h4>Navigation</h4><a href="index.html">Accueil</a><a href="services.html">Services</a><a href="apropos.html">À Propos</a><a href="realisations.html">Réalisations</a><a href="contact.html">Contact</a></div>
+    <div class="ft-col"><h4>Services</h4><a href="services.html">Gestion locative</a><a href="services.html">Optimisation revenus</a><a href="services.html">Conciergerie premium</a><a href="services.html">Maintenance</a><a href="services.html">Analytics</a></div>
+    <div class="ft-col"><h4>Contact</h4><a href="tel:+33600000000">06 XX XX XX XX</a><a href="mailto:contact@luxeconciergerie.fr">contact@luxeconciergerie.fr</a><a>Paris · Lyon · Nice · Bordeaux</a></div>
+  </div>
+  <div class="ft-bot"><span class="ft-copy">© 2025 LuxeConciergerie — Tous droits réservés</span><div class="ft-legal"><a href="#">Mentions légales</a><a href="#">CGV</a><a href="#">Confidentialité</a></div></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

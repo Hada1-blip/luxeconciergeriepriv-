@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="LuxeConciergerie — Conciergerie privée haut de gamme. +42% de revenus, 97% taux d'occupation, gestion complète."/>
+<meta name="keywords" content="conciergerie privée, gestion locative, location saisonnière, service premium"/>
+<title>LuxeConciergerie — Conciergerie Privée Premium</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="CUR"></div><div id="CURR"></div>
+<button class="fcta" id="FCTA" onclick="openPop()"><div class="fcta-dot"></div>Devis gratuit</button>
+
+<!-- POPUP -->
+<div class="pop-ov" id="POP_OV" onclick="closePop()"></div>
+<div class="pop-pnl" id="POP">
+  <button class="pop-x" onclick="closePop()">✕</button>
+  <div class="pop-t">Estimation gratuite</div>
+  <div class="pop-s">Réponse personnalisée sous 24h · Sans engagement</div>
+  <form onsubmit="subPop(event)">
+    <div class="pop-row">
+      <div class="pop-fg"><label class="pop-fl">Prénom</label><input class="pop-fi" type="text" placeholder="Jean" required/></div>
+      <div class="pop-fg"><label class="pop-fl">Nom</label><input class="pop-fi" type="text" placeholder="Dupont" required/></div>
+    </div>
+    <div class="pop-fg"><label class="pop-fl">Téléphone *</label><input class="pop-fi" type="tel" placeholder="06 XX XX XX XX" required/></div>
+    <div class="pop-fg"><label class="pop-fl">Email</label><input class="pop-fi" type="email" placeholder="jean@email.com"/></div>
+    <div class="pop-fg"><label class="pop-fl">Type de bien</label><select class="pop-sel"><option>Appartement</option><option>Maison</option><option>Villa</option><option>Chalet</option><option>Loft</option></select></div>
+    <div class="pop-fg"><label class="pop-fl">Ville</label><input class="pop-fi" type="text" placeholder="Paris, Lyon, Nice..."/></div>
+    <div class="pop-fg"><label class="pop-fl">Message</label><textarea class="pop-ta" placeholder="Surface, objectifs, situation actuelle..."></textarea></div>
+    <button type="submit" class="pop-sub" id="POPBTN">✦ Recevoir mon estimation gratuite</button>
+  </form>
+</div>
+
+<!-- MOBILE -->
+<div id="MOB">
+  <button class="mob-x" onclick="closeMob()">✕</button>
+  <a href="index.html">Accueil</a>
+  <a href="services.html">Services</a>
+  <a href="apropos.html">À Propos</a>
+  <a href="realisations.html">Réalisations</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<nav id="NAV" class="top">
+  <a class="nlogo" href="index.html"><span class="nlogo-name">LuxeConciergerie</span><span class="nlogo-sub">Conciergerie Privée</span></a>
+  <ul class="nlinks">
+    <li><a href="index.html" class='act'>Accueil</a></li>
+    <li><a href="services.html" >Services</a></li>
+    <li><a href="apropos.html" >À Propos</a></li>
+    <li><a href="realisations.html" >Réalisations</a></li>
+    <li><a href="contact.html" >Contact</a></li>
+  </ul>
+  <a href="contact.html" class="ncta">Demander un devis</a>
+  <button class="nburger" onclick="openMob()"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="hero" style="min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;padding:130px 64px 100px;background:#fff;">
+  <div style="position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;width:700px;height:700px;background:radial-gradient(circle,rgba(212,165,32,.1),transparent 75%);top:-200px;right:-150px;animation:bd1 20s ease-in-out infinite;"></div>
+  <div style="position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;width:500px;height:500px;background:radial-gradient(circle,rgba(212,165,32,.07),transparent 80%);bottom:-100px;left:-80px;animation:bd2 24s ease-in-out infinite;"></div>
+  <style>
+    @keyframes bd1{0%,100%{transform:translate(0,0);}33%{transform:translate(-30px,20px);}66%{transform:translate(15px,-15px);}}
+    @keyframes bd2{0%,100%{transform:translate(0,0);}50%{transform:translate(25px,-20px);}}
+    .hero-title{font-family:var(--fm);font-size:clamp(44px,6.2vw,86px);font-weight:900;line-height:.92;letter-spacing:-3px;margin-bottom:26px;}
+    .hero-title .t1{display:block;color:var(--navy);}
+    .hero-title .t2{display:block;font-family:var(--fd);font-style:italic;color:var(--gold2);font-weight:600;font-size:.88em;}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--goldbg);border:1px solid var(--bdg);padding:8px 20px;border-radius:100px;margin-bottom:36px;}
+    .hero-dot{width:7px;height:7px;background:var(--gold2);border-radius:50%;animation:hd 2.5s ease-in-out infinite;}
+    .hero-sub{font-size:18px;color:var(--txm);line-height:1.78;max-width:520px;margin-bottom:50px;font-weight:300;}
+    .hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+    .hfloat{position:absolute;right:64px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;z-index:3;}
+    .hfc{background:#fff;border:1px solid var(--bdr);border-radius:14px;padding:18px 22px;min-width:180px;box-shadow:0 4px 24px rgba(7,17,42,.06);position:relative;overflow:hidden;}
+    .hfc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--gold2),var(--gold4));}
+    .hfc:nth-child(1){animation:sf 4.2s ease-in-out infinite;}
+    .hfc:nth-child(2){animation:sf 5s ease-in-out infinite .9s;}
+    .hfc:nth-child(3){animation:sf 4.6s ease-in-out infinite 1.7s;}
+    @keyframes sf{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+    .hfc-num{font-family:var(--fn);font-size:42px;color:var(--navy);line-height:1;letter-spacing:1px;}
+    .hfc-lbl{font-family:var(--fm);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--txl);margin-top:3px;}
+    .hscroll{position:absolute;bottom:38px;left:64px;display:flex;align-items:center;gap:14px;}
+    .hscroll-bar{width:50px;height:1px;background:var(--bdr);position:relative;overflow:hidden;}
+    .hscroll-bar::after{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--gold2);animation:bs 2.2s ease-in-out infinite;}
+    @keyframes bs{0%{left:-100%;}100%{left:100%;}}
+    .hscroll-txt{font-family:var(--fm);font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--txl);}
+    @media(max-width:1024px){.hfloat{display:none;}.hero{padding:100px 22px 80px !important;}.hscroll{left:22px;}}
+  </style>
+  <div style="position:relative;z-index:2;max-width:720px;">
+    <div class="hero-eyebrow"><div class="hero-dot"></div><span style="font-family:var(--fm);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);">Conciergerie Privée · 24h/24 · 7j/7</span></div>
+    <h1 class="hero-title"><span class="t1">Votre bien mérite</span><span class="t2">l'excellence.</span></h1>
+    <p class="hero-sub">LuxeConciergerie prend en charge votre bien de A à Z. Gestion complète, revenus optimisés, sérénité totale. Vous encaissez — nous orchestrons tout.</p>
+    <div class="hero-btns">
+      <button class="btn-dk" onclick="openPop()">✦ Demander un devis gratuit</button>
+      <a href="services.html" class="btn-ol">Nos services →</a>
+    </div>
+  </div>
+  <div class="hfloat">
+    <div class="hfc"><div class="hfc-num" data-t="340" data-s="+">0+</div><div class="hfc-lbl">Biens gérés</div></div>
+    <div class="hfc"><div class="hfc-num" data-t="97" data-s="%">0%</div><div class="hfc-lbl">Taux d'occupation</div></div>
+    <div class="hfc"><div class="hfc-num" data-t="42" data-s="%">0%</div><div class="hfc-lbl">Revenus en plus</div></div>
+  </div>
+  <div class="hscroll"><div class="hscroll-bar"></div><span class="hscroll-txt">Explorer</span></div>
+</section>
+
+<div class="tbar">
+  <div class="tbi"><span class="tbi-ic">🏆</span><span><em>Top 1%</em> des conciergeries France</span></div>
+  <div class="tbi"><span class="tbi-ic">⚡</span><span>Intervention <em>&lt; 2h</em> garantie</span></div>
+  <div class="tbi"><span class="tbi-ic">📸</span><span>Shooting <em>professionnel</em> offert</span></div>
+  <div class="tbi"><span class="tbi-ic">🌍</span><span>Publication sur <em>15 plateformes</em></span></div>
+  <div class="tbi"><span class="tbi-ic">📊</span><span>Dashboard <em>temps réel</em></span></div>
+</div>
+
+<div class="nums-wrap">
+  <div class="nums-grid rv">
+    <div class="num-item"><span class="num-val" data-t="340" data-s="+">0</span><span class="num-lbl">Biens gérés</span></div>
+    <div class="num-item"><span class="num-val" data-t="97" data-s="%">0</span><span class="num-lbl">Taux d'occupation</span></div>
+    <div class="num-item"><span class="num-val" data-t="42" data-s="%">0</span><span class="num-lbl">Revenus en plus</span></div>
+    <div class="num-item"><span class="num-val" data-t="4800" data-s="+">0</span><span class="num-lbl">Propriétaires satisfaits</span></div>
+  </div>
+</div>
+
+<section class="sec rv" style="background:var(--w)">
+  <div class="sec-lbl">Nos Prestations</div>
+  <h2 class="sh">Chaque service pensé pour<br/><em>maximiser votre rentabilité</em></h2>
+  <p class="sp">De la publication de vos annonces à l'encaissement mensuel, nous orchestrons chaque détail avec précision.</p>
+  <div class="srv-grid">
+    <div class="srv-card"><span class="srv-n">01</span><span class="srv-ic">🏠</span><div class="srv-name">Gestion Locative 360°</div><div class="srv-desc">Publication multi-plateformes, gestion réservations, accueil voyageurs, ménage certifié et maintenance. Zéro implication requise.</div><a href="services.html" class="srv-lnk">En savoir plus →</a></div>
+    <div class="srv-card"><span class="srv-n">02</span><span class="srv-ic">🌟</span><div class="srv-name">Optimisation des Revenus</div><div class="srv-desc">Analyse continue de la demande locale, événements et saisonnalité pour fixer le meilleur tarif chaque nuit. +38% de revenus en moyenne.</div><a href="services.html" class="srv-lnk">En savoir plus →</a></div>
+    <div class="srv-card"><span class="srv-n">03</span><span class="srv-ic">✨</span><div class="srv-name">Conciergerie Premium</div><div class="srv-desc">Transferts, recommandations exclusives, services à la carte, accueil en 4 langues. Une expérience 5 étoiles inoubliable.</div><a href="services.html" class="srv-lnk">En savoir plus →</a></div>
+    <div class="srv-card"><span class="srv-n">04</span><span class="srv-ic">🔧</span><div class="srv-name">Maintenance & Urgences</div><div class="srv-desc">80 artisans certifiés disponibles 7j/7. Intervention &lt; 2h garantie, devis instantané, suivi photographique complet.</div><a href="services.html" class="srv-lnk">En savoir plus →</a></div>
+    <div class="srv-card"><span class="srv-n">05</span><span class="srv-ic">📊</span><div class="srv-name">Analytics & Reporting</div><div class="srv-desc">Dashboard temps réel, rapports mensuels, prévisions 12 mois. Virement mensuel automatique. Pilotez depuis votre téléphone.</div><a href="services.html" class="srv-lnk">En savoir plus →</a></div>
+    <div class="srv-card"><span class="srv-n">06</span><span class="srv-ic">🛡️</span><div class="srv-name">Protection & Assurance</div><div class="srv-desc">Vérification identité voyageurs, dépôt de garantie digital, couverture dommages, état des lieux photo. Votre patrimoine protégé.</div><a href="services.html" class="srv-lnk">En savoir plus →</a></div>
+  </div>
+  <div style="text-align:center;margin-top:44px"><a href="services.html" class="btn-ol">Voir toutes nos prestations →</a></div>
+</section>
+
+<section class="diff-sec">
+  <div class="diff-hdr rv">
+    <div><div class="sec-lbl">Ce qui nous différencie</div><h2 class="sh">Pourquoi choisir<br/><em>LuxeConciergerie ?</em></h2><p class="sp">7 engagements concrets qui font la différence.</p></div>
+    <div class="diff-hr"><div class="diff-hint">Défilement automatique</div><div style="display:flex;gap:8px"><button class="dnbtn" onclick="carPrev()">←</button><button class="dnbtn" onclick="carNext()">→</button></div></div>
+  </div>
+  <div class="diff-prog"><div class="diff-prog-in" id="DPROG" style="width:14%"></div></div>
+  <div class="dtrack" id="DTRACK">
+    <div class="dfc"><div class="dfc-n">01</div><div class="dfc-ico ico-bl">🏠</div><div class="dfc-chip">Gestion complète</div><div class="dfc-title">100% délégué, 0% de stress</div><div class="dfc-desc">De la publication au virement mensuel, nous gérons absolument tout. Votre seule action : encaisser.</div><div class="dfc-foot"><div><div class="dfc-metric">100%</div><div class="dfc-mlbl">Prise en charge</div></div><div class="dfc-arr">→</div></div></div>
+    <div class="dfc"><div class="dfc-n">02</div><div class="dfc-ico ico-gd">📈</div><div class="dfc-chip">Revenus maximisés</div><div class="dfc-title">+38% de revenus en moyenne</div><div class="dfc-desc">Analyse de la demande locale, événements, saisonnalité. Vos tarifs s'adaptent pour optimiser chaque nuit.</div><div class="dfc-foot"><div><div class="dfc-metric">+38%</div><div class="dfc-mlbl">Revenus suppl.</div></div><div class="dfc-arr">→</div></div></div>
+    <div class="dfc"><div class="dfc-n">03</div><div class="dfc-ico ico-gr">⭐</div><div class="dfc-chip">Expérience 5 étoiles</div><div class="dfc-title">Note moyenne 4.97/5</div><div class="dfc-desc">Accueil personnalisé, guide exclusif, services à la carte. Vos voyageurs laissent 5 étoiles systématiquement.</div><div class="dfc-foot"><div><div class="dfc-metric">4.97</div><div class="dfc-mlbl">Note /5</div></div><div class="dfc-arr">→</div></div></div>
+    <div class="dfc"><div class="dfc-n">04</div><div class="dfc-ico ico-re">⚡</div><div class="dfc-chip">Réactivité</div><div class="dfc-title">Intervention en moins de 2h</div><div class="dfc-desc">80 artisans certifiés mobilisables 24h/24. Urgence technique ? Nos équipes interviennent. Votre bien toujours impeccable.</div><div class="dfc-foot"><div><div class="dfc-metric">&lt;2h</div><div class="dfc-mlbl">Délai garanti</div></div><div class="dfc-arr">→</div></div></div>
+    <div class="dfc"><div class="dfc-n">05</div><div class="dfc-ico ico-cy">📊</div><div class="dfc-chip">Transparence</div><div class="dfc-title">Dashboard en temps réel</div><div class="dfc-desc">Revenus, taux d'occupation, planning en direct. Pilotez votre patrimoine depuis votre téléphone, où que vous soyez.</div><div class="dfc-foot"><div><div class="dfc-metric">24/7</div><div class="dfc-mlbl">Accès live</div></div><div class="dfc-arr">→</div></div></div>
+    <div class="dfc"><div class="dfc-n">06</div><div class="dfc-ico ico-pu">🛡️</div><div class="dfc-chip">Protection</div><div class="dfc-title">Votre bien toujours protégé</div><div class="dfc-desc">Vérification des voyageurs, dépôt de garantie digital, couverture dommages, état des lieux photo à chaque rotation.</div><div class="dfc-foot"><div><div class="dfc-metric">100%</div><div class="dfc-mlbl">Couverture</div></div><div class="dfc-arr">→</div></div></div>
+    <div class="dfc"><div class="dfc-n">07</div><div class="dfc-ico ico-gy">💛</div><div class="dfc-chip">Service humain</div><div class="dfc-title">Un gestionnaire dédié</div><div class="dfc-desc">Un interlocuteur unique joignable directement — pas un chatbot. Il connaît votre bien et anticipe vos besoins.</div><div class="dfc-foot"><div><div class="dfc-metric">1</div><div class="dfc-mlbl">Gestionnaire dédié</div></div><div class="dfc-arr">→</div></div></div>
+  </div>
+  <div class="dnav"><button class="dnbtn" onclick="carPrev()">←</button><div class="dndots" id="DDOTS"></div><button class="dnbtn" onclick="carNext()">→</button></div>
+</section>
+
+<section class="sec rv" style="background:var(--w)">
+  <div style="text-align:center"><div class="sec-lbl">Notre Méthode</div><h2 class="sh">Opérationnel en <em>72 heures</em> chrono</h2></div>
+  <div class="proc-grid">
+    <div class="pstep rv"><div class="pstep-n">01</div><div class="pstep-title">Évaluation Gratuite</div><div class="pstep-desc">Analyse de votre bien, estimation revenus potentiels, comparatif marché. Réponse sous 24h, sans engagement.</div></div>
+    <div class="pstep rv"><div class="pstep-n">02</div><div class="pstep-title">Onboarding Express</div><div class="pstep-desc">Signature du mandat, remise des clés, shooting photo professionnel. Une seule visite de 90 minutes suffit.</div></div>
+    <div class="pstep rv"><div class="pstep-n">03</div><div class="pstep-title">Mise en Ligne</div><div class="pstep-desc">Publication sur 15 plateformes, annonces multilingues optimisées. Vos premières réservations arrivent rapidement.</div></div>
+    <div class="pstep rv"><div class="pstep-n">04</div><div class="pstep-title">Vous Encaissez</div><div class="pstep-desc">Virement mensuel automatique, rapport détaillé, dashboard live. Vous profitez — nous gérons absolument tout.</div></div>
+  </div>
+</section>
+
+<section class="sec sec-dk rv">
+  <div style="text-align:center"><div class="sec-lbl">Témoignages</div><h2 class="sh" style="text-align:center">Ce que disent nos <em>propriétaires</em></h2></div>
+  <div class="test-grid" style="margin-top:58px">
+    <div class="tcard rv-s"><div class="tcard-q">"</div><div class="tcard-stars">★★★★★</div><div class="tcard-txt">En 4 mois, mes revenus ont bondi de 62%. LuxeConciergerie gère tout — j'encaisse simplement mon virement mensuel. Exactement ce que je cherchais.</div><div class="tcard-auth"><div class="tcard-av">S</div><div><div class="tcard-name">Sophie Marchand</div><div class="tcard-role">Propriétaire — Paris 8ème</div></div></div></div>
+    <div class="tcard rv-s"><div class="tcard-q">"</div><div class="tcard-stars">★★★★★</div><div class="tcard-txt">Le dashboard en temps réel est bluffant. Je gère depuis Tokyo — je vois mes revenus arriver en direct. Jamais imaginé que c'était possible.</div><div class="tcard-auth"><div class="tcard-av">T</div><div><div class="tcard-name">Thomas Renaud</div><div class="tcard-role">Investisseur — 4 biens gérés</div></div></div></div>
+    <div class="tcard rv-s"><div class="tcard-q">"</div><div class="tcard-stars">★★★★★</div><div class="tcard-txt">97% de taux d'occupation la première année. Mon ancien gestionnaire plafonnait à 68%. La différence est hallucinante.</div><div class="tcard-auth"><div class="tcard-av">M</div><div><div class="tcard-name">Marie-Claire Dubois</div><div class="tcard-role">Villa Côte d'Azur</div></div></div></div>
+  </div>
+</section>
+
+<section class="sec rv" style="background:var(--w);text-align:center">
+  <div class="sec-lbl">FAQ</div><h2 class="sh">Questions <em>fréquentes</em></h2>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q" onclick="togFaq(this)"><span class="faq-qt">Combien puis-je gagner avec LuxeConciergerie ?</span><span class="faq-ic">+</span></div><div class="faq-body"><div class="faq-bi">En moyenne, nos propriétaires génèrent 38% de revenus supplémentaires vs une gestion autonome. Pour un appartement parisien de 50m², cela représente souvent 800 à 1 500€ mensuels additionnels. Estimation gratuite et personnalisée pour chaque bien.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="togFaq(this)"><span class="faq-qt">Quelle est votre commission ? Y a-t-il des frais cachés ?</span><span class="faq-ic">+</span></div><div class="faq-body"><div class="faq-bi">Notre commission varie entre 15% et 22% des revenus générés. Zéro frais d'entrée, zéro frais de mise en place, zéro surprise. Vous ne payez qu'en proportion de ce que vous gagnez réellement.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="togFaq(this)"><span class="faq-qt">Puis-je bloquer des dates pour mon usage personnel ?</span><span class="faq-ic">+</span></div><div class="faq-body"><div class="faq-bi">Absolument. Depuis votre dashboard, vous bloquez vos dates en quelques secondes à tout moment. Vos dates personnelles sont strictement prioritaires.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="togFaq(this)"><span class="faq-qt">Comment optimisez-vous mes revenus ?</span><span class="faq-ic">+</span></div><div class="faq-body"><div class="faq-bi">Notre équipe analyse en continu la demande locale, les événements, les prix concurrents et l'historique de vos réservations pour recommander le meilleur tarif chaque nuit. Résultat : +38% de revenus en moyenne.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="togFaq(this)"><span class="faq-qt">Que se passe-t-il en cas de dommages d'un voyageur ?</span><span class="faq-ic">+</span></div><div class="faq-body"><div class="faq-bi">Nous vérifions l'identité de chaque voyageur et collectons un dépôt de garantie digital. En cas de dommage, notre assurance partenaire prend en charge les réparations sous 48h avec rapport photographique complet.</div></div></div>
+  </div>
+</section>
+
+<div class="cta-band rv">
+  <h2>Prêt à transformer votre bien<br/>en <em>investissement passif ?</em></h2>
+  <p>Estimation gratuite sous 24h. Sans engagement, sans frais cachés.</p>
+  <div class="cta-acts">
+    <button class="btn-gd" onclick="openPop()">✦ Demander mon estimation gratuite</button>
+    <a href="services.html" class="btn-ol-wh">Voir nos formules</a>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a class="nlogo" href="index.html"><span class="nlogo-name">LuxeConciergerie</span><span class="nlogo-sub">Conciergerie Privée</span></a>
+      <p class="ft-tagline">L'excellence au service de votre patrimoine immobilier depuis 2017.</p>
+    </div>
+    <div class="ft-col"><h4>Navigation</h4><a href="index.html">Accueil</a><a href="services.html">Services</a><a href="apropos.html">À Propos</a><a href="realisations.html">Réalisations</a><a href="contact.html">Contact</a></div>
+    <div class="ft-col"><h4>Services</h4><a href="services.html">Gestion locative</a><a href="services.html">Optimisation revenus</a><a href="services.html">Conciergerie premium</a><a href="services.html">Maintenance</a><a href="services.html">Analytics</a></div>
+    <div class="ft-col"><h4>Contact</h4><a href="tel:+33600000000">06 XX XX XX XX</a><a href="mailto:contact@luxeconciergerie.fr">contact@luxeconciergerie.fr</a><a>Paris · Lyon · Nice · Bordeaux</a></div>
+  </div>
+  <div class="ft-bot"><span class="ft-copy">© 2025 LuxeConciergerie — Tous droits réservés</span><div class="ft-legal"><a href="#">Mentions légales</a><a href="#">CGV</a><a href="#">Confidentialité</a></div></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
